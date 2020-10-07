@@ -4,25 +4,20 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { MembreListComponent } from './membre-list.component';
+import { single } from 'rxjs/operators';
 
-describe('MembreListComponent', () => {
-  let component: MembreListComponent;
-  let fixture: ComponentFixture<MembreListComponent>;
+describe('my first test', () => {
+  let sut;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MembreListComponent ]
-    })
-    .compileComponents();
-  }));
+  beforeEach(()=>{
+    sut={}
+  })
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MembreListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  it('should be true if true',() => {
+    sut.a=false;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    sut.a=true;
+
+    expect(sut.a).toBe(true);
+  })
 });

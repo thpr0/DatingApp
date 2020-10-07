@@ -16,7 +16,6 @@ namespace DatingApp.API.Data
         }
         public async Task<User> Login(string Username, string Password)
         {
-
             var user = await _db.users.FirstOrDefaultAsync(x => x.Username == Username);
             if (user == null) return null;
             if (!VerifyPasswordHass(Password, user.PasswordHash, user.PasswordSalt)) return null;
